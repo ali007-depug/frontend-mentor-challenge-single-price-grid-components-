@@ -1,0 +1,139 @@
+@use "./mixin.scss";
+//colors
+$p-Cyan: hsl(179, 62%, 43%);
+$p-Bright-Yellow: hsl(71, 73%, 54%);
+$n-Light-Gray: hsl(204, 43%, 93%);
+$n-Grayish-Blue: hsl(218, 22%, 67%);
+
+//Global rules
+body {
+  font-family: Karla;
+  background-color: $n-Light-Gray;
+  display: flex;
+  justify-content: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main {
+  padding: 0 50px;
+  margin-top: 30px;
+  @include mixin.breakpoints(sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "one one" "two three" "footer footer";
+    margin: 100px auto;
+    width: max(700px, 50%);
+  }
+  .secOne {
+    background-color: white;
+    grid-area: one;
+    & > * {
+      padding-left: 30px;
+    }
+    h3 {
+      color: $p-Cyan;
+      @include mixin.breakpoints(sm) {
+        margin: 30px 0 20px;
+      }
+      padding: 30px;
+    }
+    h4 {
+      color: $p-Bright-Yellow;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.8;
+      color: $n-Grayish-Blue;
+      font-weight: 400;
+      font-size: 15px;
+      padding-bottom: 40px;
+      @include mixin.breakpoints(sm) {
+        margin-bottom: 30px;
+        padding: 0 30px;
+      }
+    }
+  }
+  .secTwo {
+    background-color: $p-Cyan;
+    grid-area: two;
+    color: white;
+    & > * {
+      padding-left: 30px;
+    }
+    h4 {
+      @include mixin.breakpoints(sm) {
+        margin: 30px 0 20px;
+      }
+      padding: 30px;
+    }
+    .price {
+      font-size: 30px;
+      font-weight: bold;
+      position: relative;
+      span {
+        font-size: 12px;
+        position: absolute;
+        top: 30%;
+        margin-left: 10px;
+        opacity: 0.8;
+      }
+    }
+    & > :nth-child(3) {
+      margin: 10px 0 25px;
+      opacity: 0.7;
+    }
+    button {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      background-color: $p-Bright-Yellow;
+      text-align: center;
+      border: 0;
+      color: $n-Light-Gray;
+      padding: 10px;
+      width: 90%;
+      border-radius: 3px;
+      cursor: pointer;
+      @include mixin.breakpoints(sm) {
+        width: 80%;
+      }
+    }
+  }
+  .secThree {
+    background-color: hsla(178.7, 61.8%, 43.1%, 0.6);
+    grid-area: three;
+    color: $n-Light-Gray;
+    & > * {
+      padding-left: 30px;
+    }
+    h4 {
+      font-weight: 800;
+      padding: 30px;
+      @include mixin.breakpoints(sm) {
+        margin: 30px 0 20px;
+      }
+    }
+    ul {
+      font-size: 15px;
+    }
+    ul li {
+      &:last-of-type {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+footer {
+    grid-area: footer;
+    margin-top: 5px;
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}

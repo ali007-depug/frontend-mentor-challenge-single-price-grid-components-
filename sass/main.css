@@ -1,0 +1,143 @@
+body {
+  font-family: Karla;
+  background-color: hsl(204, 43%, 93%);
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main {
+  padding: 0 50px;
+  margin-top: 30px;
+}
+@media (min-width: 40em) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "one one" "two three" "footer footer";
+    margin: 100px auto;
+    width: max(700px, 50%);
+  }
+}
+main .secOne {
+  background-color: white;
+  grid-area: one;
+}
+main .secOne > * {
+  padding-left: 30px;
+}
+main .secOne h3 {
+  color: hsl(179, 62%, 43%);
+  padding: 30px;
+}
+@media (min-width: 40em) {
+  main .secOne h3 {
+    margin: 30px 0 20px;
+  }
+}
+main .secOne h4 {
+  color: hsl(71, 73%, 54%);
+  margin-bottom: 20px;
+}
+main .secOne p {
+  line-height: 1.8;
+  color: hsl(218, 22%, 67%);
+  font-weight: 400;
+  font-size: 15px;
+  padding-bottom: 40px;
+}
+@media (min-width: 40em) {
+  main .secOne p {
+    margin-bottom: 30px;
+    padding: 0 30px;
+  }
+}
+main .secTwo {
+  background-color: hsl(179, 62%, 43%);
+  grid-area: two;
+  color: white;
+}
+main .secTwo > * {
+  padding-left: 30px;
+}
+main .secTwo h4 {
+  padding: 30px;
+}
+@media (min-width: 40em) {
+  main .secTwo h4 {
+    margin: 30px 0 20px;
+  }
+}
+main .secTwo .price {
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+}
+main .secTwo .price span {
+  font-size: 12px;
+  position: absolute;
+  top: 30%;
+  margin-left: 10px;
+  opacity: 0.8;
+}
+main .secTwo > :nth-child(3) {
+  margin: 10px 0 25px;
+  opacity: 0.7;
+}
+main .secTwo button {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color: hsl(71, 73%, 54%);
+  text-align: center;
+  border: 0;
+  color: hsl(204, 43%, 93%);
+  padding: 10px;
+  width: 90%;
+  border-radius: 3px;
+  cursor: pointer;
+}
+@media (min-width: 40em) {
+  main .secTwo button {
+    width: 80%;
+  }
+}
+main .secThree {
+  background-color: hsla(178.7, 61.8%, 43.1%, 0.6);
+  grid-area: three;
+  color: hsl(204, 43%, 93%);
+}
+main .secThree > * {
+  padding-left: 30px;
+}
+main .secThree h4 {
+  font-weight: 800;
+  padding: 30px;
+}
+@media (min-width: 40em) {
+  main .secThree h4 {
+    margin: 30px 0 20px;
+  }
+}
+main .secThree ul {
+  font-size: 15px;
+}
+main .secThree ul li:last-of-type {
+  padding-bottom: 10px;
+}
+
+footer {
+  grid-area: footer;
+  margin-top: 5px;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: hsl(228, 45%, 44%);
+}/*# sourceMappingURL=main.css.map */
